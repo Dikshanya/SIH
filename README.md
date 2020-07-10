@@ -1,1 +1,3 @@
-AgrOracle : Crop Guidance and Farmers Friend
+**AgrOracle** 
+
+Crop Guidance and Farmers Friend
