@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Agroracle</string>
+    <string name="action_settings">Settings</string>
+
+    //lines to be added are below
+    <string name="login">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="not_registered">Not Registered?</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_registered">Already Registered?</string>
+    <string name="welcome_user">Welcome User</string>
+    <string name="tutorials">Crop Prediction</string>
+    <string name="check_weather">Weather Updates</string>
+    <string name="ask_us">Chat with Experts</string>
+    <string name="questions">Got any questions ? </string>
+    <string name="ask">Ask us </string>
+
+</resources>

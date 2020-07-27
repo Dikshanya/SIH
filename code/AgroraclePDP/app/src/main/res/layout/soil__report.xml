@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soil Health :"
+        android:layout_gravity="left"
+        android:textSize="24sp"
+        android:textColor="#222222"
+        android:textStyle="bold"
+        android:id="@+id/titleText2"
+        />
+
+
+    <ImageView
+        android:id="@+id/result_graph"
+        android:layout_width="380dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bargraph" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crops suitable for your soil :"
+        android:layout_gravity="left"
+        android:textSize="24sp"
+        android:textColor="#222222"
+        android:textStyle="bold"
+        android:id="@+id/titleText1"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="335dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/cropPhoto1"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/corn" />
+
+        <TextView
+            android:id="@+id/cropnameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/cropPhoto1"
+            android:text="Corn"
+            android:textColor="#222222"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="198dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/cropnameText"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_toRightOf="@+id/cropPhoto1"
+            android:background="@android:color/background_light"
+            android:text="Tips to increase corn yield"
+            android:textStyle="italic"
+            android:textColor="#006400"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_margin="10dp"
+        android:id="@+id/view1"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="335dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/cropPhoto2"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/peas" />
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/cropPhoto2"
+            android:layout_gravity="center"
+            android:text="Peas"
+            android:textColor="#222222"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="198dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/nameText"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_toRightOf="@+id/cropPhoto2"
+            android:background="@android:color/background_light"
+            android:text="Tips to increase peas yield"
+            android:textStyle="italic"
+            android:textColor="#006400"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
