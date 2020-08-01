@@ -2,6 +2,7 @@
 
 Crop Guidance and Farmers Friend
 
+![](images/agroracleLogo.png)
 
 Useful links for reference :
 
