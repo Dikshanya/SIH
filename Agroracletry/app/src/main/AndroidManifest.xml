@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.agroracletry">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity"
+            android:label="AgrOracle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Upload_image"
+            android:label="Upload image"/>
+
+        <activity android:name=".Soil_Report"
+            android:label="SoilReport"/>
+
+        <activity android:name=".Fetch_Details"
+            android:label="Fetch Details"/>
+
+        <activity android:name=".Tutorial_steps"
+            android:label="Tutorial"/>
+
+        <activity android:name=".RegisterActivity"
+            android:label="Register"/>
+
+        <activity android:name=".Home_page"
+            android:label="Home"/>
+
+        <activity android:name=".Weather"
+            android:label="Weather"/>
+
+        <activity android:name=".Assistance"
+            android:label="Help"/>
+
+        <activity android:name=".ContactActivity"
+            android:label="Contact_Us"/>
+
+
+    </application>
+
+</manifest>

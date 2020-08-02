@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#123456">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image uploaded successfully!!"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:id="@+id/success_text"
+        />
+
+    <ImageView
+        android:id="@+id/soil_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/success_text"
+        android:src="@drawable/ic_launcher_foreground" />
+
+
+
+    <Button
+        android:id="@+id/choose_img"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#04ea00"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/soil_img"
+        android:layout_centerHorizontal="true"
+        android:text="Choose image"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/results"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#04ea00"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/choose_img"
+        android:layout_centerHorizontal="true"
+        android:text="Submit image"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/get_parameters"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#04ea00"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/results"
+        android:layout_centerHorizontal="true"
+        android:text="Show result"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RGB :"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/get_parameters"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:id="@+id/rgb_title"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/get_parameters"
+        android:layout_toRightOf="@+id/rgb_title"
+        android:visibility="invisible"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:id="@+id/rgb_text"
+        />
+
+
+
+</RelativeLayout>

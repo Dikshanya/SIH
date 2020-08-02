@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.example.agroracletry"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    aaptOptions{
+        noCompress "tflite"
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.dyhdyh.support:glide:1.0.0'
+    implementation 'com.snicesoft:bitmap:1.0.0'
+    implementation 'org.jsoup:jsoup:1.9.1'
+    implementation 'com.google.firebase:firebase-ml-model-interpreter:22.0.3'
+    implementation 'org.tensorflow:tensorflow-lite:2.0.0'
+    implementation  'com.android.volley:volley:1.1.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+}
