@@ -31,5 +31,5 @@ On running the following command, the server is started :
  - Our app can also show the trend in pH over time with the help of data analytics in the form of moving averages, so that the farmer can have a picture of how his soil pH is varying over time.
  - Our app is also available in multiple regional languages.
  
- |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang2.png" width="275" height = "480" />|<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang1.png" width="275" height = "480" />           |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang3.png" width="275" height = "480" />   |
+ |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang2.png" width="270" height = "480" />|<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang1.png" width="270" height = "480" /> |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang3.png" width="270" height = "480" />|
  
