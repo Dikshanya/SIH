@@ -11,8 +11,8 @@ App:
 The app was developed using android studio (version 4.0.1).
 Backend in java and used Flask to connect the Machine Learning models with the app.
 
-Folder dataset contains the dataset used to train the machine learning models:
-
-cpdata.csv is used for crop prediction (parameters used Avg Temp , Avg Rainfall , Avg Humidity and pH)
+Folder Datasets contains the dataset used to train the machine learning models:
+1)pH Dataset - Sheet1.csv is used for pH prediction 
+2)cpdata.csv is used for crop prediction
 
 
