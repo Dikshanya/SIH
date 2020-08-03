@@ -30,3 +30,7 @@ On running the following command, the server is started :
  - Our app is able to compute the pH of the soil in real-time, that is, without the farmer having to visit a soil testing laboratory. With just a click of the mobile, he will be able to obtain the suitable crop that can be grown for his land.
  - Our app can also show the trend in pH over time with the help of data analytics in the form of moving averages, so that the farmer can have a picture of how his soil pH is varying over time.
  - Our app is also available in multiple regional languages.
+ 
+ `<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang2.png" width="280" height = "480" />
+
+ 
