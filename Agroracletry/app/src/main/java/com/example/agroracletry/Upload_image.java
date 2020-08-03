@@ -1,8 +1,11 @@
 package com.example.agroracletry;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
@@ -26,11 +29,12 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import java.io.IOException;
+import java.util.Locale;
 
 
 public class Upload_image extends AppCompatActivity {
 
-    private Button test_button;
+    //private Button test_button;
     ImageView mImageView;
     Button mChooseBtn;
     TextView s_text,rgb_txt;
@@ -47,10 +51,11 @@ public class Upload_image extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.upload_image);
         s_text=findViewById(R.id.success_text);
         rgb_txt=findViewById(R.id.rgb_text);
-        test_button=findViewById(R.id.results);
+        //test_button=findViewById(R.id.results);
         get_parameters=findViewById(R.id.get_parameters);
 
         get_parameters.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +65,13 @@ public class Upload_image extends AppCompatActivity {
 
             }
         });
-        test_button.setOnClickListener(new View.OnClickListener() {
+        /*test_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openSoilReport();
 
             }
-        });
+        });*/
 
         mImageView=findViewById(R.id.soil_img);
         mChooseBtn=findViewById(R.id.choose_img);
@@ -102,6 +107,26 @@ public class Upload_image extends AppCompatActivity {
         });
 
 
+    }
+
+    private void setLocale(String lang){
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        //save data to shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_lang", lang);
+        editor.apply();
+
+    }
+
+    //load languages saved in shared preferences
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_lang", "");
+        setLocale(language);
     }
 
     private void pickImageFromGallery() {
@@ -172,16 +197,11 @@ public class Upload_image extends AppCompatActivity {
                 blue = ((float)blueColors/(float)pixelCount);
 
                rgb_txt.setText(Float.toString(red)+','+Float.toString(blue)+','+Float.toString(green));
+               openSoilReport();
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
-
-
-
-
 
 
 
@@ -199,7 +219,7 @@ public class Upload_image extends AppCompatActivity {
         String rgb_content="{\n    \"rgb\": ["+red + ","+ green +","+blue+"] \n}";
         //String rgb_content="{\n    \"rgb\": [Chennai] \n}";;
         RequestBody body = RequestBody.create(mediaType, rgb_content ); //These are the RGB input values
-        Request request = new Request.Builder().url(" http://fe0cada1781b.ngrok.io/get_ph")//.url("http://463dbe79dc82.ngrok.io/get_ph ")
+        Request request = new Request.Builder().url("http://10599d0e12f3.ngrok.io/get_ph")//.url("http://463dbe79dc82.ngrok.io/get_ph ")
                 //This is my ip and port. You can either replace with yours and run or 									run the below line (using my server)
 //        .url(" http://2da0c30ad11f.ngrok.io/get_ph") .url("http://192.168.68.110:5000/get_ph")  //This is the url I got using ngrok where it hosts my server to everyone
                 .method("POST", body)
@@ -221,6 +241,7 @@ public class Upload_image extends AppCompatActivity {
                         public void run() {
                             rgb_txt.setText("It is "+myResponse);
                             s_text.setVisibility(View.VISIBLE);
+                            get_parameters.setVisibility(View.VISIBLE);
                         }
                     });
                 }

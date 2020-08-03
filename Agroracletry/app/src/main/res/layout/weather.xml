@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter location:"
+        android:text="@string/enter_location"
         android:layout_marginLeft="25dp"
         android:layout_gravity="left"
         android:layout_marginTop="60dp"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="City name"
+        android:hint="@string/city_name"
         android:textColor="#ffffff"
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/enterloc" />
@@ -38,7 +38,7 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/Cityname"
         android:layout_centerHorizontal="true"
-        android:text="Check weather"
+        android:text="@string/check_weather"
         android:textStyle="bold" />
 
     <ImageView
@@ -53,7 +53,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sunny"
+        android:text="@string/sunny"
         android:layout_below="@+id/sun_img"
         android:layout_gravity="left"
         android:textSize="30sp"
@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperature:"
+        android:text="@string/temperature"
         android:layout_marginLeft="30dp"
         android:layout_below="@+id/desc"
         android:layout_marginTop="40dp"
@@ -96,7 +96,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Humidity:"
+        android:text="@string/humidity"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="left"
@@ -124,7 +124,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pressure:"
+        android:text="@string/pressure"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="left"
@@ -152,7 +152,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wind Speed:"
+        android:text="@string/wind_speed"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="left"

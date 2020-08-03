@@ -47,6 +47,12 @@
         <activity android:name=".ContactActivity"
             android:label="Contact_Us"/>
 
+        <activity android:name=".TestYourSoil"
+            android:label="Test your soil"/>
+
+        <activity android:name=".Get_pH"
+            android:label="Test your pH"/>
+
 
     </application>
 

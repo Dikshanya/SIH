@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textColor="#000000"
-        android:text="FOR ALL INFO CROP"/>
+        android:text="@string/for_all_info_crop"/>
 
     <ImageView
         android:id="@+id/images"

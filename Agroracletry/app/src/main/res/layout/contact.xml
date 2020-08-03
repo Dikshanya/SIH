@@ -17,7 +17,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingTop="1dp"
-        android:text="Call us"
+        android:text="@string/call_us"
         android:layout_marginTop="10dp"
         android:textAllCaps="true"
         android:textColor="#123456"

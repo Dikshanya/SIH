@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Image uploaded successfully!!"
+        android:text="@string/image_uploaded_successfully"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
@@ -38,8 +38,9 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/soil_img"
         android:layout_centerHorizontal="true"
-        android:text="Choose image"
-        android:textStyle="bold" />
+        android:text="@string/choose_image"
+        android:textStyle="bold"
+        android:visibility="visible"/>
 
 
     <Button
@@ -51,8 +52,9 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/choose_img"
         android:layout_centerHorizontal="true"
-        android:text="Submit image"
-        android:textStyle="bold" />
+        android:text="@string/submit_image"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
 
     <Button
         android:id="@+id/get_parameters"
@@ -63,8 +65,9 @@
         android:textColor="#ffffff"
         android:layout_below="@+id/results"
         android:layout_centerHorizontal="true"
-        android:text="Show result"
-        android:textStyle="bold" />
+        android:text="@string/show_result"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
 
     <TextView
         android:layout_width="wrap_content"

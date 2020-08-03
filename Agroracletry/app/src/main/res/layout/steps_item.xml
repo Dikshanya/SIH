@@ -31,7 +31,7 @@
                 android:layout_below="@+id/steps"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
-                android:text="Step 1:"
+                android:text="@string/step_1"
                 android:textColor="#262626"
                 android:textSize="25sp" />
 
@@ -46,7 +46,7 @@
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:text="Description"
+                android:text="@string/description"
                 android:textSize="20sp" />
         </RelativeLayout>
 

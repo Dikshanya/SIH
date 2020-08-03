@@ -12,15 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Test your soil :"
+        android:text="@string/test_your_soil"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:textSize="27sp"
         android:textStyle="bold" />
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/phmeter"/>
 
     <TextView
         android:id="@+id/titleText2"
@@ -28,11 +29,48 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:layout_marginTop="20dp"
-        android:text="Do you have a pH meter?"
+        android:text="@string/do_you_have_a_ph_meter"
         android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:textSize="27sp"
         android:textStyle="bold" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup_yes_no">
+
+
+    <RadioButton
+        android:id="@+id/radioButtonYes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/yes"
+        android:textColor="#ffffff"
+        android:textSize="27sp"
+        android:textStyle="bold"        />
+
+
+    <RadioButton
+        android:id="@+id/radioButtonNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no"
+        android:textColor="#ffffff"
+        android:textSize="27sp"
+        android:textStyle="bold"  />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#04ea00"
+        android:textColor="#ffffff"
+        android:visibility="invisible"
+        android:text="@string/next"/>
 
 
 </LinearLayout>

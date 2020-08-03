@@ -2,7 +2,9 @@ package com.example.agroracletry;
 
 import android.app.Activity;
 
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -13,6 +15,8 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+
+import androidx.cardview.widget.CardView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -34,6 +38,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -48,10 +53,12 @@ public class Fetch_Details  extends Activity {
 
 
 
-    TextView temp_txt,humid_txt,rain_txt,predict_crop,predict_soil;
-    ScrollView report;
+    TextView temp_txt,humid_txt,rain_txt,predict_crop,predict_soil,title_loc;
+    TextView weather_text;
+    CardView cardweather,report;
+    //ScrollView report;
     TextView cityName;
-    Button fetch_but,predict_btn;
+    Button fetch_but;//predict_btn;
     Interpreter tflite;
     float tmp;
     float hmd;
@@ -64,80 +71,106 @@ public class Fetch_Details  extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.fetch_details);
 
+        title_loc=findViewById(R.id.titleloc);
         temp_txt=findViewById(R.id.temp_txt);
         humid_txt=findViewById(R.id.humid_txt);
         rain_txt=findViewById(R.id.rain_txt);
+        weather_text=findViewById(R.id.titlewloc);
+        cardweather=findViewById(R.id.cardview_weather);
         predict_crop=findViewById(R.id.predict_crops_txt);
         predict_soil=findViewById(R.id.predict_soil_txt);
         pH=getIntent().getStringExtra("pH");
         fetch_but= findViewById(R.id.fetch_parameters);
-        predict_btn= findViewById(R.id.predict);
+        //predict_btn= findViewById(R.id.predict);
         fetch_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cityName = findViewById(R.id.editTextCityname);
                 String cName = cityName.getText().toString();
                 findweather(cName);
+                fetch_but.setVisibility(View.INVISIBLE);
+                title_loc.setVisibility(View.INVISIBLE);
+                cityName.setVisibility(View.INVISIBLE);
+                predictfunc();
 
 
             }
         });
 
-        predict_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                float [][]inputNumber= new float [1][4];
-                //float [][] inputNumber= {{(float) 25.587,(float) 53.567,(float)6.506,(float) 156.966},{(float) 27.536,(float) 89.929,(float)6.619,(float) 45.485}};
-                       // {(float) 24.485,(float) 83.206,(float)6.1325,(float) 192.231}};
-                inputNumber[0][0]= tmp;
-                inputNumber[0][1]= hmd;
-                inputNumber[0][2]=Float.parseFloat(pH);
-                inputNumber[0][3]=(float)192.231;
 
-                float ph = (float) inputNumber[0][2];
-                String soil_type="";
-                if(ph>=3.5 && ph<=4.0)
-                    soil_type="Strongly acidic ! Not suitable for any crop";
-                else if(ph>=4.5 && ph<6.0)
-                    soil_type="Moderately acidic";
-                else if(ph>=6.0 && ph<6.5)
-                    soil_type="Slightly acidic";
-                else if(ph>=6.5 && ph<7.5)
-                    soil_type="Neutral";
-                else if(ph>=7.5 && ph<8.5)
-                    soil_type="Slightly alakaline";
-                else if(ph>=8.5 && ph<=9.0)
-                    soil_type="Strongly alkaline";
-
-                float [][] prediction=doInference(inputNumber);
-                float [] max=new float[3];
-                String [] crops={"rice","wheat","mungbean","Tea","millet","maize","lentil","jute","cofee","cotton",
-                        "ground nut","peas","rubber","sugarcane","tobacco","kidney beans","moth beans","coconut","blackgram","adzuki beans",
-                        "pigeon peas","chick peas","banana","grapes","apple","mango","muskmelon","orange","papaya","pomegranate","watermelon"};
-                int [] index = new int [3];
-                for(int j=0;j<1;j++) {
-                    max[j] = prediction[j][0];
-                    index[j]=0;
-                    for (int i = 1; i < 30; i++)
-                        if (prediction[j][i] > max[j]) {
-                            max[j] = prediction[j][i];
-                            index[j]=i;
-                        }
-                }
-                report = findViewById(R.id.report);
-                report.setVisibility(View.VISIBLE);
-                predict_soil.setText("Your soil is "+soil_type+".");
-                predict_crop.setText("Suitable crop for your soil is "+crops[index[0]]);//+','+crops[index[1]]+','+crops[index[2]]);
-            }
-        });
         try{
             tflite = new Interpreter(loadModelFile());
         }catch (Exception ex){
             ex.printStackTrace();
         }
 
+    }
+    public void predictfunc() {
+        float [][]inputNumber= new float [1][4];
+        //float [][] inputNumber= {{(float) 25.587,(float) 53.567,(float)6.506,(float) 156.966},{(float) 27.536,(float) 89.929,(float)6.619,(float) 45.485}};
+        // {(float) 24.485,(float) 83.206,(float)6.1325,(float) 192.231}};
+        inputNumber[0][0]= tmp;
+        inputNumber[0][1]= hmd;
+        inputNumber[0][2]=Float.parseFloat(pH);
+        inputNumber[0][3]=rain;
+
+        float ph = (float) inputNumber[0][2];
+        String soil_type="";
+        if(ph>=3.5 && ph<=4.0)
+            soil_type="Strongly acidic ! Not suitable for any crop";
+        else if(ph>=4.5 && ph<6.0)
+            soil_type="Moderately acidic";
+        else if(ph>=6.0 && ph<6.5)
+            soil_type="Slightly acidic";
+        else if(ph>=6.5 && ph<7.5)
+            soil_type="Neutral";
+        else if(ph>=7.5 && ph<8.5)
+            soil_type="Slightly alakaline";
+        else if(ph>=8.5 && ph<=9.0)
+            soil_type="Strongly alkaline";
+
+        float [][] prediction=doInference(inputNumber);
+        float [] max=new float[3];
+        String [] crops={"rice","wheat","mungbean","Tea","millet","maize","lentil","jute","cofee","cotton",
+                "ground nut","peas","rubber","sugarcane","tobacco","kidney beans","moth beans","coconut","blackgram","adzuki beans",
+                "pigeon peas","chick peas","banana","grapes","apple","mango","muskmelon","orange","papaya","pomegranate","watermelon"};
+        int [] index = new int [3];
+        for(int j=0;j<1;j++) {
+            max[j] = prediction[j][0];
+            index[j]=0;
+            for (int i = 1; i < 30; i++)
+                if (prediction[j][i] > max[j]) {
+                    max[j] = prediction[j][i];
+                    index[j]=i;
+                }
+        }
+        report = findViewById(R.id.cardview_report);
+        report.setVisibility(View.VISIBLE);
+        predict_soil.setText("Your soil is "+soil_type+".");
+        predict_crop.setText("Suitable crop for your soil is "+crops[index[0]]);//+','+crops[index[1]]+','+crops[index[2]]);
+    }
+
+    private void setLocale(String lang){
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        //save data to shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_lang", lang);
+        editor.apply();
+
+    }
+
+    //load languages saved in shared preferences
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_lang", "");
+        setLocale(language);
     }
 
     public  float [][] doInference(float [][] inputVal){
@@ -209,7 +242,7 @@ public class Fetch_Details  extends Activity {
         RequestBody body2 = RequestBody.create(mediaType2, city );
         Request request2 = new Request.Builder()
 //                .url("http://192.168.68.110:5000/get_weather")
-                .url("http://fe0cada1781b.ngrok.io/get_weather") //use this link , this is a new link. Will be valid for 7 hours
+                .url("http://10599d0e12f3.ngrok.io/get_weather") //use this link , this is a new link. Will be valid for 7 hours
                 .method("POST", body2)
                 .addHeader("Content-Type", "application/json")
                 .build();
@@ -232,10 +265,13 @@ public class Fetch_Details  extends Activity {
                             hmd=Float.parseFloat(splited[0]);
                             tmp=Float.parseFloat(splited[1]);
                             rain=Float.parseFloat(splited[2]);
-                            temp_txt.setText(Float.toString(tmp));
-                            humid_txt.setText(Float.toString(hmd));
-                            rain_txt.setText(Float.toString(rain));
-                            //temp_txt.setText(myResponse2);
+
+                            weather_text.setVisibility(View.VISIBLE);
+                            cardweather.setVisibility(View.VISIBLE);
+                            temp_txt.setText(Float.toString(tmp)+" \u2103");
+                            humid_txt.setText(Float.toString(hmd)+" %");
+                            rain_txt.setText(Float.toString(rain)+" mm");
+//                            temp_txt.setText(myResponse2);
                         }
                     });
                 }
