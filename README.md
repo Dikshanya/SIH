@@ -4,6 +4,10 @@ Crop Guidance and Farmers Friend
 
 ![](images/agroracleLogo.png)
 
+
+App:
+The app was developed using android studio [used version 4.0.1].
+
 Useful links for reference :
 
 http://archive.ics.uci.edu/ml/datasets/Crop+mapping+using+fused+optical-radar+data+set
