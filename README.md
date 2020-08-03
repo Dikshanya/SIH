@@ -21,7 +21,7 @@ Folder *Datasets* contains the dataset used to train the machine learning models
 *login_server* contains the code for running a server using Flask to host sqlite database, and to run the get_ph and get_weather functions that compute the pH and weather parameters.
 On running the following command, the server is started :
 
-flask run --host=0.0.0.0
+`flask run --host=0.0.0.0`
 
 *ResearchPapers* contains different reseach papers and sources that we referred to build our mobile app.
 
