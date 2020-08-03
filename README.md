@@ -23,7 +23,7 @@ On running the following command, the server is started :
 
 `flask run --host=0.0.0.0`
 
-*ResearchPapers* contains different reseach papers and sources that we referred to build our mobile app.
+*ResearchPapers* contains different research papers and sources that we referred to build our mobile app.
 
 ## Unique Selling Point of our app
 
@@ -32,4 +32,3 @@ On running the following command, the server is started :
  - Our app is also available in multiple regional languages.
  
  |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang2.png" width="270" height = "480" />|<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang1.png" width="270" height = "480" /> |<img src="https://raw.githubusercontent.com/Dikshanya/SIH/master/images/lang3.png" width="270" height = "480" />|
- 
