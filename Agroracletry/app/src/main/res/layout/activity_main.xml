@@ -1,87 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/container"
-    android:background="#123456"
-    android:gravity="center_horizontal">
+<resources>
+    <string name="app_name">Agroracletry</string>
+    <drawable name="actionbar_background">#00FF00</drawable>
+    <color name="color_title">#123456</color>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="127dp"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/logo"/>
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foreground="#C2FFFFFF"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/edittext_username"
-            android:layout_width="190dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="2dp"
-            android:background="#ffffff"
-            android:drawableLeft="@drawable/username"
-            android:hint="Username"/>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="190dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#123456"
-            >
-
-        <EditText
-            android:id="@+id/edittext_password"
-            android:layout_width="190dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="#ffffff"
-            android:drawableLeft="@drawable/password"
-            android:hint="Password"
-            android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#04ea00"
-        android:textColor="#ffffff"
-        android:text="Login"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:textColor="#ffffff"
-            android:text="Not_registered?"/>
-
-        <TextView
-            android:id="@+id/textview_register"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:paddingLeft="10dp"
-            android:textStyle="bold"
-            android:textColor="#04ea00"
-            android:text="Register"/>
-
-    </LinearLayout>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="language">Change Language</string>
+    <string name="title_activity_contact" translatable="false">ContactActivity</string>
+    <string name="contact_form">Contact Us</string>
+    <string name="contact_form_name">Your Name</string>
+    <string name="contact_form_email">Your Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Message</string>
+    <string name="contact_form_button">Send Message</string>
+    <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
+    <string name="contact_posted">Your message has been successfully delivered.</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Not_registered?</string>
+<!--    <string name="register">Register</string>-->
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_registered">Already Registered?</string>
 
 
-</LinearLayout>
+    <string name="predict">Predict</string>
+    <string name="avg_rain">Avg Rain:</string>
+    <string name="avg_humidity">Avg Humidity:</string>
+    <string name="avg_temp">Avg Temp:</string>
+    <string name="your_soil_is">Your soil is</string>
+    <string name="you_can_cultivate">You can cultivate</string>
+    <string name="report">Report</string>
+    <string name="enter_ph_of_your_soil">Enter pH of your soil:</string>
+    <string name="submit">Submit</string>
+    <string name="crop_prediction">CROP PREDICTION</string>
+    <string name="weather_today">Weather Today</string>
+    <string name="useful_info">Useful info</string>
+    <string name="got_any_questions">Got any questions?</string>
+    <string name="ask_us">Ask us</string>
+    <string name="for_all_info_crop">FOR ALL INFO CROP</string>
+    <string name="soil_health">Soil Health :</string>
+    <string name="crops_suitable_for_your_soil">Crops suitable for your soil :</string>
+    <string name="tips_to_increase_corn_yield">Tips to increase corn yield</string>
+    <string name="tips_to_increase_peas_yield">Tips to increase peas yield</string>
+    <string name="step_1">Step 1:</string>
+    <string name="description">Description</string>
+    <string name="test_your_soil">Test your soil :</string>
+    <string name="do_you_have_a_ph_meter">Do you have a pH meter?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="next">Next</string>
+    <string name="steps_to_collect_soil_sample">Steps to collect soil sample :</string>
+    <string name="upload_soil_image">Upload soil image</string>
+    <string name="image_uploaded_successfully">Image uploaded successfully!!</string>
+    <string name="choose_image">Choose image</string>
+    <string name="submit_image">Submit image</string>
+    <string name="show_result">Show result</string>
+    <string name="enter_location">Enter location:</string>
+    <string name="city_name">City name</string>
+    <string name="check_weather">Check weather</string>
+    <string name="sunny">Sunny</string>
+    <string name="temperature">Temperature:</string>
+    <string name="humidity">Humidity:</string>
+    <string name="pressure">Pressure:</string>
+    <string name="wind_speed">Wind Speed:</string>
+    <string name="call_us">Call us</string>
+    <string name="Test_soil_using_pH_meter">Test soil using pH meter :</string>
+    <string name="fetch">Fetch</string>
+    <string name="register">Register</string>
+    <string name="mobile">Mobile Number</string>
+
+
+    <!--    <string name="weather_at_your_location">Weather at your location:</string>-->
+
+</resources>
