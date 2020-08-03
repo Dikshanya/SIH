@@ -12,9 +12,9 @@ The server is run in localhost.
 
 Folder *Datasets* contains the dataset used to train the machine learning models: 1)pH Dataset - Sheet1.csv is used for pH prediction 2)cpdata.csv is used for crop prediction
 
-CropPrediction contains the ML model used to predict crops written in python. ph_model contains the ML model trained to predict the pH of the soil using the soil sample image.
+*CropPrediction* contains the ML model used to predict crops written in python. ph_model contains the ML model trained to predict the pH of the soil using the soil sample image.
 
-ResearchPapers contains different reseach papers and sources that we referred to build our mobile app.
+*ResearchPapers* contains different reseach papers and sources that we referred to build our mobile app.
 
 ## Unique Selling Point of our app
 
