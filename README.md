@@ -18,6 +18,11 @@ Folder *Datasets* contains the dataset used to train the machine learning models
 
 *CropPrediction* contains the ML model used to predict crops written in python. ph_model contains the ML model trained to predict the pH of the soil using the soil sample image.
 
+*login_server* contains the code for running a server using Flask to host sqlite database, and to run the get_ph and get_weather functions that compute the pH and weather parameters.
+On running the following command, the server is started :
+
+flask run --host=0.0.0.0
+
 *ResearchPapers* contains different reseach papers and sources that we referred to build our mobile app.
 
 ## Unique Selling Point of our app
